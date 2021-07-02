@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+const config = require('../properties/config');
 
 export default function useDeals(update) {
   const [error, setError] = useState(false);
@@ -9,7 +10,7 @@ export default function useDeals(update) {
   useEffect(() => {
     async function init() {
       try {
-        const resp = await axios.get('/redflagdeals');
+        const resp = await axios.get(config.redflagUrl);
         setData(resp.data);
         setLoading(false);
       } catch (error) {

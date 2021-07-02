@@ -6,12 +6,13 @@ import { toast } from 'react-toastify';
 import useDeals from '../apicalls/useDeals';
 import Spinner from '../common/Spinner';
 import CardDisplay from './CardDisplay';
+import config from '../properties/config';
 
 const HomePage = (props) => {
   const { data, error, loading } = useDeals();
   const handleClick = async (item) => {
     toast.success('Removed the Object');
-    await axios.get(`/deal/${item._id}`);
+    await axios.get(`${config.redflagUrl}/deal/${item._id}`);
   };
 
   return (
