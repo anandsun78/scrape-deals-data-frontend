@@ -1,6 +1,6 @@
 const config = {};
 
-config.redflagUrl = process.env.REDFLAGURL || '/redflagdeals';
+config.redflagUrl = 'https://web-scraper-spring-app.herokuapp.com/redflagdeals';
 
 config.redflagSiteContent =
   'dd.total_count.total_count_selector,div.post_preview_body,h3.topictitle';
